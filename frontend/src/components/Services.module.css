@@ -1,0 +1,211 @@
+.services {
+  background-color: var(--color-bg-deep);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Services Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+}
+
+.cardImage {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.cardImage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 16, 21, 0.7) 100%);
+}
+
+.cardBody {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.featuresList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.featItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.checkActive {
+  color: var(--color-text-bright);
+}
+
+.checkMuted {
+  color: var(--color-primary);
+}
+
+.readMore {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-top: 1rem;
+}
+
+.readMoreArrow {
+  transition: transform var(--transition-fast);
+}
+
+.readMore:hover .readMoreArrow {
+  transform: translateX(4px);
+}
+
+/* Active Highlight Card (02) */
+.cardActive {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.cardActive:hover {
+  border-color: var(--color-primary-hover);
+}
+
+.cardActive .cardTitle,
+.cardActive .cardDesc,
+.cardActive .featItem span {
+  color: var(--color-text-bright);
+}
+
+.cardActive .cardDesc {
+  opacity: 0.9;
+}
+
+.cardActive .readMore {
+  color: var(--color-text-bright);
+}
+
+.readMoreActive:hover {
+  opacity: 0.9;
+}
+
+/* Absolute Index text overlay */
+.indexText {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.05);
+  line-height: 1;
+}
+
+.cardActive .indexText {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive breakdowns */
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.15rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

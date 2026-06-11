@@ -1,0 +1,375 @@
+.about {
+  background-color: var(--color-bg-deep);
+  padding-top: 12rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Image Column Styles */
+.imageCol {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.archedBorder {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid var(--color-primary);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Rotating certified badge */
+.badgeOverlay {
+  position: absolute;
+  bottom: 30px;
+  left: -40px;
+  width: 130px;
+  height: 130px;
+  z-index: 5;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.badgeCircle {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-base);
+  border-radius: 50%;
+  border: 1px dashed var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.badgeCircle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.badgeText {
+  fill: var(--color-text-bright);
+  font-family: var(--font-heading);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.badgeInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 66px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(var(--color-primary-rgb), 0.4);
+}
+
+.badgeIcon {
+  color: var(--color-text-bright);
+}
+
+/* Content Column Styles */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tagIcon {
+  color: var(--color-primary);
+}
+
+.heading {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  line-height: 1.2;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.headingUnderline {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-top: 0.75rem;
+  border-radius: 2px;
+}
+
+.leadParagraph {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Tab Bar */
+.tabBar {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.tabBtn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  padding: 0.75rem 0.5rem;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: var(--color-text-bright);
+}
+
+.tabActive {
+  color: var(--color-primary) !important;
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+/* Tab Panel checklist */
+.tabPanel {
+  min-height: 170px;
+  background-color: var(--color-bg-base);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+.tabHeading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tabDescription {
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.checklist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.checkIconWrapper {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Footer Row styles */
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.founderCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-bg-base);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary);
+  color: var(--color-text-bright);
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founderMeta h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.founderMeta p {
+  font-size: 0.75rem;
+}
+
+.signature {
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  opacity: 0.7;
+  border-left: 1px solid var(--color-border);
+  padding-left: 1rem;
+  margin-left: 0.5rem;
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.watchingBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-bright);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.watchingPlay {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.watchingBtn:hover .watchingPlay {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 991px) {
+  .about {
+    padding-top: 8rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .imageCol {
+    order: 1; /* Move image down on mobile */
+  }
+
+  .badgeOverlay {
+    left: -20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+  
+  .footerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .founderCard {
+    width: 100%;
+  }
+  
+  .ctaActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .badgeOverlay {
+    width: 100px;
+    height: 100px;
+    bottom: 10px;
+    left: -10px;
+  }
+  
+  .badgeInner {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .badgeInner svg {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,243 @@
+.team {
+  background-color: var(--color-bg-deep);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Slider Track Layout */
+.sliderWindow {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 0.5rem; /* Padding prevents scaled card shadows from clipping */
+  margin-left: -0.5rem;
+}
+
+.sliderTrack {
+  display: flex;
+  gap: 2rem;
+  transition: transform var(--transition-slow);
+  will-change: transform;
+}
+
+.card {
+  flex: 0 0 calc((100% - 3 * 2rem) / 4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+/* Arched image layout */
+.imageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+  border-radius: 120px 120px 20px 20px; /* Arched Top Cutout */
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.archBorder {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 114px 114px 14px 14px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.4;
+  transition: opacity var(--transition-fast);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.card:hover .archBorder {
+  opacity: 1;
+}
+
+/* Hover Social Popups */
+.socialOverlay {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  z-index: 5;
+  background: linear-gradient(360deg, rgba(10, 16, 21, 0.9) 0%, transparent 100%);
+  transition: bottom var(--transition-normal);
+}
+
+.card:hover .socialOverlay {
+  bottom: 0;
+}
+
+.socialLink {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-primary);
+  color: var(--color-text-bright);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.socialLink:hover {
+  background-color: var(--color-text-bright);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* Info Details */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-bright);
+}
+
+.role {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Slider controls row */
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.navBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-bright);
+  background-color: var(--color-bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.navBtn:hover:not(.disabled) {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-bright);
+}
+
+.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+/* Pagination Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.activeDot {
+  width: 20px;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+}
+
+.dot:hover {
+  background-color: var(--color-primary);
+}
+
+/* Responsive Slide Widths */
+@media (max-width: 991px) {
+  .card {
+    flex: 0 0 calc((100% - 1 * 2rem) / 2);
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2.15rem;
+  }
+  .card {
+    flex: 0 0 100%;
+  }
+  .sliderWindow {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}

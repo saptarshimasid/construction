@@ -1,0 +1,155 @@
+.chooseUs {
+  background-color: var(--color-bg-deep);
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Content Column */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.featCard {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  width: 46px;
+  height: 46px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.featCard:hover .iconWrapper {
+  background-color: var(--color-primary);
+  color: var(--color-text-bright);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.featContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.featTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.featDesc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Image Column Styles */
+.imageCol {
+  display: flex;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.frameDecoration {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  border: 2px solid var(--color-primary);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 2.15rem;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
