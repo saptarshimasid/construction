@@ -174,7 +174,7 @@ export default function Blog({ onContactClick }) {
                 ))}
               </div>
 
-              <button onClick={onContactClick} className={`${styles.readMore} ${styles.activeReadMore}`}>
+              <button onClick={onContactClick} className={styles.readMore}>
                 <span>Read More</span>
                 <ArrowRight size={14} />
               </button>

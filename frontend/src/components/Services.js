@@ -95,51 +95,46 @@ export default function Services({ onContactClick }) {
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
         >
-          {services.map((service) => {
-            // Card 2 is the active orange highlight card by default in con.jpg
-            const isActive = service.id === 2;
-            
-            return (
-              <motion.div
-                key={service.id}
-                className={`${styles.card} ${isActive ? styles.cardActive : ''}`}
-                variants={cardVariants}
-              >
-                {/* Image */}
-                <div 
-                  className={styles.cardImage} 
-                  style={{ backgroundImage: `url(${getServiceImage(service.id)})` }}
-                />
+          {services.map((service) => (
+            <motion.div
+              key={service.id}
+              className={styles.card}
+              variants={cardVariants}
+            >
+              {/* Image */}
+              <div 
+                className={styles.cardImage} 
+                style={{ backgroundImage: `url(${getServiceImage(service.id)})` }}
+              />
 
-                {/* Content */}
-                <div className={styles.cardBody}>
-                  <h3 className={styles.cardTitle}>{service.title}</h3>
-                  <p className={styles.cardDesc}>{service.description}</p>
-                  
-                  <ul className={styles.featuresList}>
-                    {service.features.map((feat, index) => (
-                      <li key={index} className={styles.featItem}>
-                        <Check size={14} className={isActive ? styles.checkActive : styles.checkMuted} />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+              {/* Content */}
+              <div className={styles.cardBody}>
+                <h3 className={styles.cardTitle}>{service.title}</h3>
+                <p className={styles.cardDesc}>{service.description}</p>
+                
+                <ul className={styles.featuresList}>
+                  {service.features.map((feat, index) => (
+                    <li key={index} className={styles.featItem}>
+                      <Check size={14} className={styles.checkIcon} />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* Read More strip */}
-                  <button 
-                    onClick={onContactClick} 
-                    className={`${styles.readMore} ${isActive ? styles.readMoreActive : ''}`}
-                  >
-                    <span>Read More</span>
-                    <ArrowRight size={14} className={styles.readMoreArrow} />
-                  </button>
+                {/* Read More strip */}
+                <button 
+                  onClick={onContactClick} 
+                  className={styles.readMore}
+                >
+                  <span>Read More</span>
+                  <ArrowRight size={14} className={styles.readMoreArrow} />
+                </button>
 
-                  {/* Absolute index overlay */}
-                  <span className={styles.indexText}>{service.indexText}</span>
-                </div>
-              </motion.div>
-            );
-          })}
+                {/* Absolute index overlay */}
+                <span className={styles.indexText}>{service.indexText}</span>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* View All Button */}
