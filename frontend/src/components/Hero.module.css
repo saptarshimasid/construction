@@ -170,29 +170,25 @@
   color: var(--color-text-bright);
   z-index: 10;
   transition: all var(--transition-fast);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
 }
 
 .prev {
   left: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
 }
 
 .next {
   right: 2rem;
+}
+
+.sliderBtn:hover {
   background-color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-
-.prev:hover {
-  background-color: var(--color-text-bright);
-  color: var(--color-bg-deep);
-}
-
-.next:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
+  border-color: var(--color-primary);
+  color: var(--color-text-bright);
+  transform: translateY(-50%) scale(1.08);
 }
 
 /* Stats Overlay */
