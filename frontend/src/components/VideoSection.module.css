@@ -245,19 +245,37 @@
   .heading {
     font-size: 2rem;
   }
+
+  .ringCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .ringWrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .ringValue {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 480px) {
   .progressGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   .outlineText {
     display: none;
   }
   .videoCard {
-    height: 320px;
+    height: 300px;
   }
   .cardContent {
     padding: 1.5rem;
   }
+  .heading {
+    font-size: 1.75rem;
+  }
 }
+

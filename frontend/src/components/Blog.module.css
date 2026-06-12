@@ -185,11 +185,26 @@
   
   .grid {
     grid-template-columns: 1fr;
-    max-width: 380px;
+    max-width: 100%;
     margin: 0 auto 3rem auto;
   }
   
   .card {
-    height: 270px;
+    height: 260px;
   }
 }
+
+@media (max-width: 480px) {
+  .card {
+    height: 240px;
+  }
+
+  .textCard {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}
+

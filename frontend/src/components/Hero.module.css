@@ -130,30 +130,42 @@
 }
 
 .playBtn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   color: var(--color-text-bright);
   font-weight: 600;
   font-size: 0.95rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+  padding: 0.9rem 2rem;
+  transition: all var(--transition-normal);
+  cursor: pointer;
 }
 
 .playIconWrapper {
-  width: 44px;
-  height: 44px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.playBtn:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  transform: translateY(-2px);
 }
 
 .playBtn:hover .playIconWrapper {
   border-color: var(--color-primary);
   background-color: var(--color-primary);
-  transform: scale(1.1);
 }
 
 /* Slider buttons (anchored to screen edges) */
@@ -213,7 +225,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.25rem 1rem;
   aspect-ratio: 1 / 1;
-  min-height: 140px;
+  min-height: 130px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -303,7 +315,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-bottom: 22rem;
+    padding-bottom: 26rem;
   }
   .titleWrapper {
     width: 100%;
@@ -317,26 +329,45 @@
     width: 100%;
     gap: 1rem;
   }
-  .btnRow a {
+  .btnRow a,
+  .btnRow button {
     width: 100%;
     justify-content: center;
   }
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .statCard {
+    min-height: 110px;
+    aspect-ratio: auto;
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding-bottom: 34rem;
+    padding-bottom: 30rem;
   }
   .title {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
   .bracket {
-    font-size: 3rem;
+    font-size: 2.6rem;
+  }
+  .description {
+    font-size: 0.95rem;
   }
   .statsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statCard {
+    min-height: 100px;
+    padding: 0.75rem;
+  }
+  .statVal {
+    font-size: 1.1rem;
+  }
+  .statLbl {
+    font-size: 0.7rem;
   }
 }

@@ -204,3 +204,13 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.9rem;
+  }
+
+  .cardBody {
+    padding: 1.5rem;
+  }
+}
